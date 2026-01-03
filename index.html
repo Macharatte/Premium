@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>無料版 - Simple Calc</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; background: #f0fdf4; padding: 50px; }
+        .box { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); display: inline-block; }
+        input { padding: 10px; font-size: 18px; width: 150px; border: 1px solid #ccc; border-radius: 5px; }
+        .btn-pay { background: #16a34a; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; margin-top: 20px; text-decoration: none; display: inline-block; }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>無料版電卓 <span style="font-size: 0.6em; color: #666;">(一般機能)</span></h2>
+        <input type="number" id="num" placeholder="金額(円)" oninput="calc()">
+        <p>結果: <span id="res">0</span> 円</p>
+        <hr>
+        <p style="font-size: 0.9em; color: #d97706;">★有料版なら「消費税計算」と「ドル変換」が可能！</p>
+        <a href="premium.html" class="btn-pay">有料版を購入して移動する</a>
+    </div>
+
+    <script>
+        function calc() {
+            const val = document.getElementById('num').value || 0;
+            document.getElementById('res').innerText = Number(val).toLocaleString();
+        }
+    </script>
+</body>
+</html>
